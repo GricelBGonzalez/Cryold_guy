@@ -29,8 +29,10 @@ public class Player : MonoBehaviour
     internal void TeleportToLocation(Transform location)
 	{
         transform.position = location.position;
-
+        Debug.Log("X:" + location.rotation.eulerAngles.x);
+        Debug.Log("Y:" + location.rotation.eulerAngles.y);
         vision = new Vector2(location.rotation.eulerAngles.x, location.rotation.eulerAngles.y);
+        CameraLook();
         upwardsSpeed = 0f;
         delayPlayerControl = 2f;
     }
