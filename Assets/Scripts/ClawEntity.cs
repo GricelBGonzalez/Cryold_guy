@@ -31,7 +31,7 @@ public class ClawEntity : MonoBehaviour
 		playerKillCount = playerKillCount_MaxTime;
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
 		if (!playerInside || Weapon_Torch.playerIsProtected)
 		{

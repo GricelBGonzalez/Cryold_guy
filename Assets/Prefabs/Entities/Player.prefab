@@ -132,11 +132,11 @@ MonoBehaviour:
   visionSpeed: 270
   maxDelayPlayerControl: 0.77
   mController: {fileID: 280501593432761525}
-  walkSpeed: 4
+  walkSpeed: 6
   stepsAndJumps: {fileID: 3677651246170605705}
   soundStep: {fileID: 8300000, guid: bfabad6991f5cd94883965638f1f33b7, type: 3}
   soundJump: {fileID: 8300000, guid: c2f8c9f824b90934fa4403d596777c29, type: 3}
-  stepCountdownSound: 0.32
+  stepCountdownSound: 0.2
   jumpPower: 7.3
   terminalFallVelocity: 20
   startFallVelocity: 2

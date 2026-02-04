@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
         transform.position = location.position;
         Debug.Log("X:" + location.rotation.eulerAngles.x);
         Debug.Log("Y:" + location.rotation.eulerAngles.y);
-        vision = new Vector2(location.rotation.eulerAngles.x, location.rotation.eulerAngles.y);
         CameraLook();
         upwardsSpeed = 0f;
         delayPlayerControl = 2f;
@@ -72,7 +71,7 @@ public class Player : MonoBehaviour
 	{
         delayPlayerMovement += 1f;
 	}
-    // Start is called before the first frame FixedUpdate
+    // Start is called before the first frame Update
     void Start()
     {
         Checkpoint_Save();
@@ -85,7 +84,7 @@ public class Player : MonoBehaviour
         Cursor.visible = true;
 	}
 
-	// FixedUpdate is called once per frame
+	// Update is called once per frame
 	void Update()
     {
         if (delayPlayerControl > 0)
@@ -204,14 +203,17 @@ public class Player : MonoBehaviour
 	public Vector3 Camera_GetPosition() => mCamera.transform.position;
     public Vector3 Camera_GetDirection() => mCamera.transform.forward;
 
+
+    private Vector3 mCheckpoint_Position;
+    private Vector2 mCheckpoint_Vision;
     public static void Checkpoint_Save()
 	{
         var player = FindObjectOfType<Player>(true);
         if (!player.checkPoint)
             player.checkPoint = (new GameObject("Checkpoint Spawn")).transform;
 
-        player.checkPoint.position = player.transform.position;
-        player.checkPoint.rotation =  player.mCamera.transform.rotation;
+        player.mCheckpoint_Position = player.transform.position;
+        player.mCheckpoint_Vision = player.vision;
 
         CheckpointDependent.AllCheckpoints_Save();
     }
@@ -221,12 +223,13 @@ public class Player : MonoBehaviour
         if (!player.checkPoint)
             throw new System.Exception();
 
-        player.Player_Unlock();
-        player.transform.position = player.checkPoint.position;
-        var chVision = player.checkPoint.rotation.eulerAngles;
-        player.vision = new Vector2(chVision.y, chVision.x);
+        player.transform.position = player.mCheckpoint_Position;
+        player.vision = player.mCheckpoint_Vision;
 
+		player.transform.position = player.mCheckpoint_Position;
+		player.vision = player.mCheckpoint_Vision;
+        player.CameraLook();
+		player.Player_Unlock();
         CheckpointDependent.AllCheckpoints_Load();
-        player.DelayPlayerMovement_1S();
     }
 }

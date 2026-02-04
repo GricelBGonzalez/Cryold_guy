@@ -30,7 +30,7 @@ public class Weapon_TorchPlacer : WeaponMechanic
 	public override void ExtraRemoveCall()
 	{
 	}
-	private void FixedUpdate()
+	private void Update()
 	{
 		showWhenPlayerIsProtected.SetActive(Weapon_Torch.playerIsProtected);
 	}

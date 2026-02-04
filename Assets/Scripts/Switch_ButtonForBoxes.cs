@@ -40,7 +40,7 @@ public class Switch_ButtonForBoxes : Switch_Activator
 	{
 		isActivated = false;
 	}
-	private void FixedUpdate()
+	private void Update()
 	{
 		if (!isActivated)
 			if (hasPlayer || boxes.Count > 0)

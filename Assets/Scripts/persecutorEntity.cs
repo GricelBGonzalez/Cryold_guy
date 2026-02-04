@@ -34,7 +34,7 @@ public class persecutorEntity : CheckpointDependent
 		activeOnStart = gameObject.activeSelf;
 	}
 
-	// Start is called before the first frame FixedUpdate
+	// Start is called before the first frame Update
 	void Start()
     {
 		Checkpoint_Save();
@@ -44,7 +44,6 @@ public class persecutorEntity : CheckpointDependent
 	{
 		current = next;
 		next = Player.id.transform.position + playerBreadCrumbOffset;
-		transform.LookAt(next, Vector3.up);
 		normalWalk -= 1f;
 	}
 	private float normalWalk;
@@ -57,13 +56,14 @@ public class persecutorEntity : CheckpointDependent
 		}
 		transform.position = Vector3.Lerp(current, next, normalWalk);
 		normalWalk += Time.deltaTime;
-
+		transform.LookAt(Player.id.transform.position - Vector3.up * 1.5f, Vector3.up);
+		//transform.Rotate(Vector3.up * -Quaternion.LookRotation(next, Vector3.up).y, Time.deltaTime * 90f);
 		if (normalWalk >= 1)
 			GoToNextCrumb();
 	}
 
-    // FixedUpdate is called once per frame
-    void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
 		WalkToCrumb();
 

@@ -6,7 +6,7 @@ public class FireFloor : MonoBehaviour
 {
 	public DetectPlayer detector;
 
-	private void FixedUpdate()
+	private void Update()
 	{
 		if(detector.playerDetected)
 		{

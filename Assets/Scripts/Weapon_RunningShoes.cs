@@ -15,7 +15,7 @@
 	}
     bool isRunning;
 
-	private void FixedUpdate()
+	private void Update()
 	{
 		if (isRunning == false)
 			ExtraRemoveCall();

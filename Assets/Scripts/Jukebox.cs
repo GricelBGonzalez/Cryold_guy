@@ -7,7 +7,7 @@ public class Jukebox : MonoBehaviour
     public float minWaitTime;
     public float maxWaitTime;
     float delay;
-	private void FixedUpdate()
+	private void Update()
 	{
         if (mAudio.isPlaying)
             return;

@@ -101,6 +101,10 @@ MonoBehaviour:
   detector: {fileID: 2425017951327054292}
   laserActivationSound: {fileID: 6473981609210417457}
   startActivated: 1
+  mesh: {fileID: 194778798629764839}
+  mat_Activated: {fileID: 2100000, guid: daa1d2e8bb502574b866c94729e5667c, type: 2}
+  mat_Deactivated: {fileID: 2100000, guid: 56bff3853c73740da981a9b91fe146ab, type: 2}
+  setActive: {fileID: 654502064652132900}
 --- !u!1 &8097407862933663022
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,12 +306,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58db33f6057478648abc828cddab4426, type: 3}
+--- !u!1 &654502064652132900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 264071834664687047, guid: 58db33f6057478648abc828cddab4426, type: 3}
+  m_PrefabInstance: {fileID: 774453967572072419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2425017951327054292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3105246501850127927, guid: 58db33f6057478648abc828cddab4426, type: 3}
   m_PrefabInstance: {fileID: 774453967572072419}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 654502064652132900}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed0ef40ba59d54a44a0d07e90d5c788f, type: 3}

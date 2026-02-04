@@ -15,7 +15,7 @@ public class Switch_OneUseButton : Switch_Activator
 		UpdateLight();
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
 		if (player && Input.GetKey(KeyCode.E) && !hasBeenActivated)
 			SwitchOn();

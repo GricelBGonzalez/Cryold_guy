@@ -26,15 +26,15 @@ public class PingPongSwitch : Switch_Activator
 		savedActivation = currentActivation;
 	}
 
-	// Start is called before the first frame FixedUpdate
+	// Start is called before the first frame Update
 	void Start()
     {
 		countdownActivate = timeToActivate;
 		delay = delay_Max;
     }
 
-    // FixedUpdate is called once per frame
-    void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
 		if (delay >= 0f)
 		{

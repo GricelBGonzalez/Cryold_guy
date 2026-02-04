@@ -37,15 +37,15 @@ public class ArmedEnemy : TrapActivator
 		DeathAnimationControllers.id.turret.SetActive(true);
 	}
 
-	// Start is called before the first frame FixedUpdate
+	// Start is called before the first frame Update
 	void Start()
     {
 		aimToPlayer = activatedByDefault;
 		CountToKillPlayer_Reset();
 	}
 
-    // FixedUpdate is called once per frame
-    void FixedUpdate()
+    // Update is called once per frame
+    void Update()
 	{
 		if (!aimToPlayer || !playerInsideBox)
 			return;

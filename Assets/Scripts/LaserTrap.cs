@@ -7,19 +7,34 @@ public class LaserTrap : TrapActivator
     public DetectPlayer detector;
     public AudioSource laserActivationSound;
     public bool startActivated;
+    private bool activated = true;
+    [SerializeField] MeshRenderer mesh;
+    [SerializeField] Material mat_Activated;
+    [SerializeField] Material mat_Deactivated;
+
+    [SerializeField] GameObject setActive;
 	public override void SwitchPress()
 	{
-        gameObject.SetActive(!gameObject.activeSelf);
-        if (gameObject.activeSelf)
+        activated= !activated;
+
+        var matSel = activated ? mat_Activated : mat_Deactivated;
+        Material[] mat = { matSel };
+        setActive.SetActive(activated);
+		mesh.SetMaterials(new List<Material>(mat));
+		if (activated && laserActivationSound.gameObject.activeSelf)
             laserActivationSound.Play();
 	}
 	private void Start()
 	{
-        gameObject.SetActive(startActivated);
+        activated= !startActivated;
+        laserActivationSound.gameObject.SetActive(false);
+        SwitchPress();
+		laserActivationSound.gameObject.SetActive(true);
+
 	}
 
-	// FixedUpdate is called once per frame
-	void FixedUpdate()
+	// Update is called once per frame
+	void Update()
     {
         if (detector.DetectPlayerOnce())
         {

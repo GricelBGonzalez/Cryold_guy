@@ -4,6 +4,7 @@ public class Box : CheckpointDependent
 {
 	public Rigidbody mRig;
 	public Collider mCol;
+	public Box_LightOnSelected mLight;
 	Vector3 pos;
 	Quaternion rot;
 	bool hasBeenStarted;
@@ -44,7 +45,7 @@ public class Box : CheckpointDependent
 		mRig.useGravity = !makeKinematic;
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 		if (Input.GetKey(KeyCode.Return))
 			Checkpoint_Load();

@@ -15,7 +15,7 @@ public class StageExit : MonoBehaviour
 		Player.id.Player_Lock();
 		Debug.Log("Exit = " + triggersActivated + "/" + match);
 	}
-	private void FixedUpdate()
+	private void Update()
 	{
 
 		if (triggersActivated >= match && !DeathAnimationControllers.id.switchgood.activeSelf)

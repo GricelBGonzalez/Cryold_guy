@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3303445846051932129}
   - component: {fileID: 7952263800268870236}
+  - component: {fileID: 1735283706833148010}
   m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
@@ -94,6 +95,28 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1735283706833148010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607807222971373210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce5c300a99c1c642a9a77f243e12968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxLight_Light: {fileID: 7952263800268870236}
+  boxLight_highlited:
+    bLVal_intensity: 4
+    bLVal_color: {r: 1, g: 0.8112416, b: 0, a: 1}
+  boxLight_notLooked:
+    bLVal_intensity: 1
+    bLVal_color: {r: 1, g: 1, b: 1, a: 1}
+  boxLight_picked_up:
+    bLVal_intensity: 8
+    bLVal_color: {r: 0, g: 1, b: 0.122285604, a: 1}
 --- !u!1 &7960974648636902544
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,4 +266,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mRig: {fileID: 7707371442078488331}
   mCol: {fileID: 3156839871192643681}
+  mLight: {fileID: 1735283706833148010}
   canRelease: 0

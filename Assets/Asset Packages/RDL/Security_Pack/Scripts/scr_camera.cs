@@ -11,8 +11,8 @@ public class scr_camera : MonoBehaviour {
 	
 	}
 	
-	// FixedUpdate is called once per frame
-	void FixedUpdate () {
+	// Update is called once per frame
+	void Update () {
         transform.rotation = Quaternion.Euler(transform.eulerAngles.x, (Mathf.Sin(Time.realtimeSinceStartup) * rotate_amount) + transform.eulerAngles.y, transform.eulerAngles.z);
     }
 }

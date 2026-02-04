@@ -24,7 +24,7 @@ public class PistonTrap : TrapActivator
 
     [SerializeField]
     private DetectPlayer playerIsBeingDetected;
-    // Start is called before the first frame FixedUpdate
+    // Start is called before the first frame Update
     void Start()
     {
         normalGrowValue = 1f / timeToReachState;
@@ -54,8 +54,8 @@ public class PistonTrap : TrapActivator
             Gizmos.DrawWireCube(p1fRed.position - 0.5f * p1fRed.transform.forward, Vector3.one * 0.25f);
     }
 
-	// FixedUpdate is called once per frame
-	void FixedUpdate()
+	// Update is called once per frame
+	void Update()
     {
         var animation = animateForward ? +1f : -1f;
 
